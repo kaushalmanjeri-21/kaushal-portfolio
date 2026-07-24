@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaushal Subramaniam — Strategist, Executor, Creative Director</title>
+<meta name="description" content="Growth-focused operator who scales brands from zero and creates stories that connect the audience with the brand. Sports marketing strategist, creative director, and content executor.">
+<style>
+  :root{
+    --bg:#faf9f6;
+    --bg-alt:#f1efe9;
+    --ink:#14161a;
+    --ink-soft:#4a4d55;
+    --line:#e2ded4;
+    --accent:#e8481f;
+    --accent-soft:#fdece6;
+    --card:#ffffff;
+    --serif: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --maxw: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,249,246,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{
+    max-width:var(--maxw);margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .navbar .name{font-weight:700;font-size:15px;letter-spacing:0.02em;text-decoration:none;}
+  .navlinks{display:flex;gap:28px;font-size:14px;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);}
+  .navlinks a:hover{color:var(--accent);}
+  @media (max-width:640px){ .navlinks{gap:16px;font-size:12.5px;} }
+
+  /* HERO */
+  .hero{padding:88px 0 64px;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    display:inline-block;font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:18px;
+  }
+  h1.hero-name{
+    font-family:var(--serif);
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;margin:0 0 10px;font-weight:700;
+  }
+  .hero-role{font-size:17px;color:var(--ink-soft);margin:0 0 28px;font-weight:600;}
+  .hero-role span{color:var(--ink);}
+  p.hero-message{
+    font-family:var(--serif);
+    font-size:clamp(20px,2.6vw,27px);
+    max-width:760px;line-height:1.4;margin:0 0 26px;color:var(--ink);
+  }
+  .hero-meta{font-size:14px;color:var(--ink-soft);}
+  .hero-meta .dot{margin:0 8px;color:var(--line);}
+
+  /* SKILLS */
+  .skills{padding:56px 0;border-bottom:1px solid var(--line);}
+  .skills-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid var(--line);
+  }
+  .skill{padding:26px 22px 26px 0;border-right:1px solid var(--line);}
+  .skill:last-child{border-right:none;}
+  .skill .num{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:0.08em;}
+  .skill h3{font-family:var(--serif);font-size:19px;margin:8px 0 8px;}
+  .skill p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  @media (max-width:820px){
+    .skills-grid{grid-template-columns:1fr 1fr;}
+    .skill{border-right:none;border-bottom:1px solid var(--line);padding:20px 0;}
+  }
+  @media (max-width:480px){ .skills-grid{grid-template-columns:1fr;} }
+
+  /* SECTION HEADERS */
+  section.block{padding:72px 0;}
+  section.block.alt{background:var(--bg-alt);}
+  .section-head{max-width:680px;margin-bottom:44px;}
+  .section-tag{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px;display:block;}
+  .section-head h2{font-family:var(--serif);font-size:clamp(28px,4vw,38px);margin:0 0 14px;line-height:1.15;}
+  .section-head p{font-size:16px;color:var(--ink-soft);margin:0;}
+
+  /* CASE STUDY (Sportwalk) */
+  .case{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:36px;margin-bottom:28px;
+  }
+  .case-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
+  .case-tag{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:700;}
+  .case h3{font-family:var(--serif);font-size:25px;margin:6px 0 0;}
+  .case-role{font-size:12.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:20px;padding:5px 14px;white-space:nowrap;}
+  .case p.desc{font-size:15px;color:var(--ink-soft);max-width:680px;margin:0 0 24px;}
+  .shots{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:8px;
+  }
+  .shot{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;}
+  .shot img{width:100%;height:220px;object-fit:cover;object-position:top;}
+  .shot-cap{padding:10px 12px;font-size:12px;color:var(--ink-soft);line-height:1.4;}
+  .shot-cap .metric{color:var(--accent);font-weight:700;}
+  .shot-cap a{color:var(--ink);text-decoration:underline;font-size:11.5px;}
+
+  /* FREELANCE CARDS */
+  .fcards{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:760px){ .fcards{grid-template-columns:1fr;} }
+  .fcard{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px;display:flex;flex-direction:column;}
+  .fcard .ftag{font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;}
+  .fcard h3{font-family:var(--serif);font-size:21px;margin:0 0 4px;}
+  .fcard .fsub{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .fcard p{font-size:14px;color:var(--ink-soft);margin:0 0 18px;flex-grow:1;}
+  .fcard .flinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:auto;}
+  .fcard .flinks a{font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px;}
+  .fcard .flinks a:hover{opacity:0.75;}
+  .fcard .flinks .disabled{font-size:13px;color:#b8b3a6;font-weight:600;}
+
+  /* VIDEO CALLOUT */
+  .video-callout{
+    display:flex;gap:26px;align-items:center;background:var(--ink);color:#fff;border-radius:6px;padding:30px 32px;margin-top:8px;flex-wrap:wrap;
+  }
+  .video-callout .vtext{flex:1;min-width:240px;}
+  .video-callout .vtag{font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:#ff8a67;font-weight:700;margin-bottom:8px;}
+  .video-callout h4{font-family:var(--serif);font-size:20px;margin:0 0 8px;}
+  .video-callout p{font-size:13.5px;color:#c9c9cc;margin:0;}
+  .video-callout a.btn{
+    background:var(--accent);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;
+    padding:12px 22px;border-radius:30px;white-space:nowrap;
+  }
+
+  /* CREDENTIAL */
+  .credential{
+    display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;
+    background:var(--card);border:1px solid var(--line);border-radius:6px;padding:32px;
+  }
+  .credential .badge{
+    font-family:var(--serif);font-size:13px;font-weight:700;color:var(--accent);
+    border:1.5px solid var(--accent);border-radius:50%;width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;text-align:center;flex-shrink:0;line-height:1.2;
+  }
+  .credential .ctext{flex:1;min-width:260px;}
+  .credential h4{font-family:var(--serif);font-size:19px;margin:0 0 8px;}
+  .credential p{font-size:14px;color:var(--ink-soft);margin:0 0 10px;}
+  .credential a{font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;border-bottom:1.5px solid var(--accent);}
+
+  /* FOOTER */
+  footer{padding:60px 0 40px;border-top:1px solid var(--line);}
+  footer .fwrap{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  footer h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);margin:0 0 10px;}
+  footer a.email{color:var(--accent);text-decoration:none;font-size:17px;font-weight:600;}
+  footer .copyright{font-size:12.5px;color:var(--ink-soft);}
+
+  .note{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="navbar">
+    <a class="name" href="#top">KAUSHAL SUBRAMANIAM</a>
+    <nav class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#freelance">Consulting</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Strategist · Executor · Creative Director</span>
+      <h1 class="hero-name">Kaushal Subramaniam</h1>
+      <p class="hero-role"><span>Sports &amp; brand marketing</span> — Chennai, India</p>
+      <p class="hero-message">Growth-focused operator who scales brands from zero and creates stories that connect the audience with the brand.</p>
+      <p class="hero-meta">MSc Strategic Sport Marketing, Leeds Beckett University<span class="dot">•</span>kaushalmanjeri@gmail.com</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <div class="skills-grid">
+        <div class="skill">
+          <span class="num">01</span>
+          <h3>Strategy</h3>
+          <p>Positioning, market diagnosis, and campaign architecture for brands starting from zero — plus the monetization path to back it up.</p>
+        </div>
+        <div class="skill">
+          <span class="num">02</span>
+          <h3>Brand Building</h3>
+          <p>Identity systems, tone of voice, and content pillars built to scale from a single city to a national, cross-generational audience.</p>
+        </div>
+        <div class="skill">
+          <span class="num">03</span>
+          <h3>Storytelling</h3>
+          <p>Turning match footage, fan culture, and sponsor partnerships into narratives people actually want to share.</p>
+        </div>
+        <div class="skill">
+          <span class="num">04</span>
+          <h3>Content Creation</h3>
+          <p>Captions, reel scripts, video briefs, and creative concepts — ideated and executed end-to-end, not just planned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMARY WORK: SPORTWALK -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Primary Work</span>
+        <h2>Inside the social feed of a professional football club</h2>
+        <p>For over a year I've worked as strategist, creative director, and executor across the digital presence of a professional Indian Super League football club — every post, reel, and sponsor activation. What's below is a curated sample; the actual output runs into the hundreds. I can't name the club or the agency I work through publicly yet, but the work speaks for itself.</p>
+      </div>
+
+      <!-- CASE A -->
+      <div class="case">
+        <div class="case-head">
+          <div>
+            <span class="case-tag">Strategy</span>
+            <h3>Reading the regional fanbase</h3>
+          </div>
+          <span class="case-role">Strategist</span>
+        </div>
+        <p class="desc">A national football audience isn't one audience. I adapted a trending carousel format into Punjabi vernacular framing for the club's home fanbase, then built two separate reels around Malayalam pop culture for the club's Malayali players and their South Indian following. The second Malayalam reel pulled 5x the engagement of the first — proof the format was getting sharper with each iteration, not just repeating itself.</p>
+        <div class="shots">
+          <div class="shot">
+            <img src="assets/sportwalk/02-punjabi-carousel.jpg" alt="Trending carousel adapted into Punjabi vernacular framing">
+            <div class="shot-cap">Trending carousel reframed in Punjabi vernacular for the home fanbase. <a href="https://www.instagram.com/p/DUNSugDkoRp/?img_index=1" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/08-mallu-rdx.jpg" alt="Malayalam pop culture reel referencing RDX with three Malayali players">
+            <div class="shot-cap">Malayalam pop-culture integration #1 (RDX) — <span class="metric">1.2K likes</span>, 8 shares. <a href="https://www.instagram.com/rgpunjabfc/reel/DVgDOLkjPGE/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/11-vaazha2-mallu.jpg" alt="Malayalam pop culture reel referencing Vaazha 2 with Malayali players">
+            <div class="shot-cap">Malayalam pop-culture integration #2 (Vaazha 2) — <span class="metric">6.2K likes</span>, 36 comments. <a href="https://www.instagram.com/rgpunjabfc/reel/DW1Mvz-AS77/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE B -->
+      <div class="case">
+        <div class="case-head">
+          <div>
+            <span class="case-tag">Creative Direction</span>
+            <h3>Making sponsors part of the story</h3>
+          </div>
+          <span class="case-role">Creative Director</span>
+        </div>
+        <p class="desc">Kit partner, radio partner, streaming partner — three different sponsor relationships, three different creative approaches, each built to sit naturally in the club's feed instead of reading like a paid ad.</p>
+        <div class="shots">
+          <div class="shot">
+            <img src="assets/sportwalk/05-shivnaresh-activation.jpg" alt="Kit partner activation content">
+            <div class="shot-cap">Kit partner activation concept. <a href="https://www.instagram.com/rgpunjabfc/p/DU-teB2kgcH/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/06-radiomirchi-activation.jpg" alt="Radio partner activation content">
+            <div class="shot-cap">Radio partner activation concept. <a href="https://www.instagram.com/rgpunjabfc/p/DU-2iKuEu-i/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/07-gaana-activation.jpg" alt="Streaming partner activation content">
+            <div class="shot-cap">Streaming partner activation concept. <a href="https://www.instagram.com/rgpunjabfc/p/DU_NVISkrAO/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE C -->
+      <div class="case">
+        <div class="case-head">
+          <div>
+            <span class="case-tag">Execution</span>
+            <h3>Formats that made people stop scrolling</h3>
+          </div>
+          <span class="case-role">Executor</span>
+        </div>
+        <p class="desc">Introduced UTT-style reels to turn raw Veo match-camera footage into shareable content, and brought the "don't spill the water" challenge format to the club's page — both became some of the highest-performing organic posts in the sample. The matchday lineup announcement below was picked as Post of the Week by the league itself.</p>
+        <div class="shots">
+          <div class="shot">
+            <img src="assets/sportwalk/01-utt-reel-minerva.jpg" alt="UTT-style reel edited from Veo match footage">
+            <div class="shot-cap">UTT-style reel from Veo match footage — <span class="metric">30.2K likes</span>, 105 shares. <a href="https://www.instagram.com/rgpunjabfc/reel/DTJmknGDKhk/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/04-dont-spill-water.jpg" alt="Don't spill the water challenge reel">
+            <div class="shot-cap">"Don't spill the water" challenge reel — <span class="metric">7.9K likes</span>, 75 shares. <a href="https://www.instagram.com/rgpunjabfc/reel/DUpoXtZks08/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/10-lineup-postofweek.jpg" alt="Starting XI lineup announcement, selected Post of the Week by the league">
+            <div class="shot-cap"><span class="metric">Selected Post of the Week</span> by the league — 2.3K likes. <a href="https://www.instagram.com/p/DWq6EP-gThL/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE D -->
+      <div class="case">
+        <div class="case-head">
+          <div>
+            <span class="case-tag">Strategy + Execution</span>
+            <h3>Real-time and data-driven content</h3>
+          </div>
+          <span class="case-role">Strategist / Executor</span>
+        </div>
+        <p class="desc">Capitalised on the calendar collision between the league's season opener and Valentine's Day, then built an ongoing series around goal-scoring highlights, top-scorer stats, national-team call-ups, and ticket-sale pushes — turning match data and club milestones into a steady weekly cadence rather than occasional one-off posts.</p>
+        <div class="shots">
+          <div class="shot">
+            <img src="assets/sportwalk/03-valentines-newsjack.jpg" alt="Newsjacking content around Valentine's Day and season opener">
+            <div class="shot-cap">Season-opener x Valentine's Day newsjack — <span class="metric">2.1K likes</span>. <a href="https://www.instagram.com/p/DUuvZ1gkuGk/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/09-national-rep.jpg" alt="National team representation content">
+            <div class="shot-cap">National-team representation feature. <a href="https://www.instagram.com/rgpunjabfc/p/DWlRfowFJPi/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/12-goalscoring.jpg" alt="Goal scoring content series">
+            <div class="shot-cap">Goal-scoring highlight series. <a href="https://www.instagram.com/rgpunjabfc/p/DXCPo6SgX-x/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/13-boxoffice.jpg" alt="Box office ticket sale content">
+            <div class="shot-cap">Ticket sale / attendance push. <a href="https://www.instagram.com/rgpunjabfc/p/DXV7V5ADGBI/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+          <div class="shot">
+            <img src="assets/sportwalk/14-topscorers.jpg" alt="Top scorer stats content">
+            <div class="shot-cap">Top-scorer stats storytelling. <a href="https://www.instagram.com/rgpunjabfc/p/DXlgx9WD-HJ/" target="_blank" rel="noopener">View post ↗</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO CALLOUT -->
+      <div class="video-callout">
+        <div class="vtext">
+          <span class="vtag">Long-Form / Creative Direction</span>
+          <h4>Championship-winning video brief</h4>
+          <p>Conceived and briefed a long-form video for the club's U18 side winning the AIFF Elite Youth League — from narrative arc to shotlist.</p>
+        </div>
+        <a class="btn" href="https://youtu.be/2pRWxr1gGO4" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREELANCE / CONSULTING -->
+  <section class="block alt" id="freelance">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Secondary Work</span>
+        <h2>Freelance strategy &amp; brand consulting</h2>
+        <p>Alongside Sportwalk, I take on freelance strategy work — usually starting from a blank page: no existing brand voice, no playbook, just a business that needs one. These are finished, real proposals, viewable in full.</p>
+      </div>
+
+      <div class="fcards">
+
+        <div class="fcard">
+          <span class="ftag">Positioning → Content → Sponsorship</span>
+          <h3>Cricanalyst</h3>
+          <div class="fsub">Cricket intelligence platform, India</div>
+          <p>A three-part engagement for a cricket analytics startup: positioned the product for serious and elite cricket audiences rather than recreational scorers, scripted a full Month 1 content and reel plan, then built the sponsorship and player-partnership pitch to fund the next stage of growth.</p>
+          <div class="flinks">
+            <a href="https://docs.google.com/document/d/1GQPdl_3-xhN9j7lOC87OgcujWa7hR_qDy-x1dsaqf6M/view" target="_blank" rel="noopener">Positioning strategy ↗</a>
+            <a href="https://docs.google.com/document/d/13dZMy1cXLvIjwx2vOYfUTgNnAmVQsfPBUC79If78nMo/view" target="_blank" rel="noopener">Content plan ↗</a>
+            <a href="https://docs.google.com/document/d/1dR2FX0-B23lPPFebX7BQC2TLaQtW9q4m1Ylq5stCCoc/view" target="_blank" rel="noopener">Sponsorship pitch ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Digital Campaign Strategy</span>
+          <h3>Legends Cricket League 2026</h3>
+          <div class="fsub">Tournament launch campaign</div>
+          <p>Full digital strategy for a legends cricket tournament — central creative idea ("Rivalry Rewritten"), a five-phase rollout from tease to tournament takeover, a content-IP ecosystem, and a complete KPI framework.</p>
+          <div class="flinks">
+            <a href="https://docs.google.com/document/d/1lKYzeEdwqyTFyLHzJsp46ntgmPJDYW6E5fqwQ8GFm48/view" target="_blank" rel="noopener">Read the strategy ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Partnership Activation</span>
+          <h3>EA SPORTS × Chelsea FCW</h3>
+          <div class="fsub">Global brand partnership plan</div>
+          <p>Activation plan for a global brand partnership: in-person fan events, an athlete press conference, an inclusivity initiative tied to World Autism Week, two social-first hero reels, and a full brand-sentiment measurement framework.</p>
+          <div class="flinks">
+            <a href="assets/docs/ea-sports-x-chelsea-fcw-activation-plan.pdf" target="_blank" rel="noopener">View activation plan ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Paid Retainer · via WTF PR</span>
+          <h3>Great Hornbill Resorts</h3>
+          <div class="fsub">3-month digital transformation, Kerala</div>
+          <p>Diagnosed a resort's website and social gaps, then built a phased plan — visual-first website rebuild, brand theme, guest-generated content engine, and paid campaigns — tied directly to occupancy and booking KPIs.</p>
+          <div class="flinks">
+            <a href="assets/docs/great-hornbill-resorts-proposal.pdf" target="_blank" rel="noopener">View proposal ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Sponsorship &amp; CSR Architecture</span>
+          <h3>Starting Five</h3>
+          <div class="fsub">Grassroots basketball, Kerala</div>
+          <p>Built the full sponsorship and CSR structure for a grassroots basketball organisation — four-tier sponsorship packages, a ₹1.5L-per-school CSR programme breakdown, and impact metrics mapped to Schedule VII CSR compliance.</p>
+          <div class="flinks">
+            <a href="assets/docs/starting-five-sponsorship-csr-deck.pdf" target="_blank" rel="noopener">View deck ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Brand &amp; Community Strategy</span>
+          <h3>Let's Game Now (LGN)</h3>
+          <div class="fsub">Esports organisation, 100-day plan</div>
+          <p>Rebuilt an esports organisation's brand and community function after a structural reset: relaunched digital channels, built a Discord community system, planned monetisation campaigns, and proposed a lean, freelancer-backed model instead of new full-time hires.</p>
+          <div class="flinks">
+            <a href="https://docs.google.com/document/d/1Ot0Cd8ib8pYNo6UXYZqZNNXLSh2WPzdhn4siZfTwL9E/view" target="_blank" rel="noopener">Read the plan ↗</a>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <span class="ftag">Outside Sports · SEO &amp; Digital Audit</span>
+          <h3>Cybermaster</h3>
+          <div class="fsub">Maritime software company</div>
+          <p>A structured SEO and digital-presence audit for a naval architecture software company — technical fixes, backlink strategy, spelling/brand-consistency cleanup, and a LinkedIn thought-leadership content plan. Proof the strategic thinking travels outside sports.</p>
+          <div class="flinks">
+            <span class="disabled">Delivered as a direct written proposal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIAL -->
+  <section class="block">
+    <div class="wrap">
+      <div class="credential">
+        <div class="badge">MSc<br>2023</div>
+        <div class="ctext">
+          <h4>MSc Strategic Sport Marketing — Leeds Beckett University</h4>
+          <p>Dissertation: <em>"The Symbiotic Relationship of Branding and Sponsorship Activation: Leveraging Instagram for Effective Sports Marketing in Indian Football."</em> Research on athlete endorsement, sponsorship activation, and Instagram-led fan engagement in Indian football — the same intersection this entire portfolio lives in.</p>
+          <a href="assets/docs/dissertation-instagram-sports-marketing.pdf" target="_blank" rel="noopener">Read the dissertation ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fwrap">
+      <div>
+        <h2>Let's talk.</h2>
+        <a class="email" href="mailto:kaushalmanjeri@gmail.com">kaushalmanjeri@gmail.com</a>
+      </div>
+      <div class="copyright">© 2026 Kaushal Subramaniam. Built to update every few months.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
